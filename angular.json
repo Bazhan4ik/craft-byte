@@ -13,7 +13,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/app/browser",
+                        "outputPath": "dist/craft-byte/browser",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -77,10 +77,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "app:build:production"
+                            "browserTarget": "craft-byte:build:production"
                         },
                         "development": {
-                            "browserTarget": "app:build:development"
+                            "browserTarget": "craft-byte:build:development"
                         },
                         "ci": {
                             "progress": false
@@ -91,7 +91,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "app:build"
+                        "browserTarget": "craft-byte:build"
                     }
                 },
                 "test": {
@@ -139,7 +139,7 @@
                 "server": {
                     "builder": "@angular-devkit/build-angular:server",
                     "options": {
-                        "outputPath": "dist/app/server",
+                        "outputPath": "dist/craft-byte/server",
                         "main": "src/server/server.ts",
                         "tsConfig": "tsconfig.server.json",
                         "inlineStyleLanguage": "scss"
@@ -169,12 +169,12 @@
                     "builder": "@nguniversal/builders:ssr-dev-server",
                     "configurations": {
                         "development": {
-                            "browserTarget": "app:build:development",
-                            "serverTarget": "app:server:development"
+                            "browserTarget": "craft-byte:build:development",
+                            "serverTarget": "craft-byte:server:development"
                         },
                         "production": {
-                            "browserTarget": "app:build:production",
-                            "serverTarget": "app:server:production"
+                            "browserTarget": "craft-byte:build:production",
+                            "serverTarget": "craft-byte:server:production"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -188,12 +188,12 @@
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "app:build:production",
-                            "serverTarget": "app:server:production"
+                            "browserTarget": "craft-byte:build:production",
+                            "serverTarget": "craft-byte:server:production"
                         },
                         "development": {
-                            "browserTarget": "app:build:development",
-                            "serverTarget": "app:server:development"
+                            "browserTarget": "craft-byte:build:development",
+                            "serverTarget": "craft-byte:server:development"
                         }
                     },
                     "defaultConfiguration": "production"
