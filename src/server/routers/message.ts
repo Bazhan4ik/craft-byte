@@ -39,13 +39,8 @@ router.post("/", async (req, res) => {
 
 });
 
-async function saveMessage(name: string, email: string, message: string) {
 
 
-
-
-
-}
 async function validateRecaptcha(token: string) {
     const secretKey = '6Lc6a6gmAAAAAIzHdQxtiP5OOyNitKhDd86YPsQM'; // Replace with your Secret Key
 
