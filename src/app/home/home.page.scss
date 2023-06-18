@@ -1,27 +1,243 @@
-#container {
-  text-align: center;
+.app {
+    height: 100%;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    padding-top: 124px;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+    .container {
+        width: 100vw;
+        max-width: 1052px;
+        padding-bottom: 124px;
+    }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+    .overlay {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
 
-  color: #8c8c8c;
+    .menu {
+        height: 72px;
+        background-color: var(--on-background);
+        border-bottom-left-radius: 34px;
+        border-bottom-right-radius: 34px;
+        display: flex;
+        align-items: center;
+        padding: 0 42px;
+        outline: 4px solid black;
+        box-shadow: var(--shadow);
 
-  margin: 0;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border: 2px solid black;
+            border-radius: 8px;
+            background-color: var(--blue);
 
-#container a {
-  text-decoration: none;
+            img {
+                height: 38px;
+                width: 38px;
+            }
+        }
+    }
+
+    .options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        padding-bottom: 124px;
+
+        .option {
+            padding: 24px;
+            border-radius: 12px;
+            border: 2px solid black;
+            box-shadow: var(--shadow);
+            color: black;
+            position: relative;
+            transition: 0.3s;
+
+            .title {
+                h2 {
+                    font-family: var(--font-lexend);
+                }
+            }
+
+            .subtitle {
+                p {
+                    font-family: var(--font-pixely);
+                    font-size: 20px;
+                }
+            }
+
+            .text {
+                p {
+                    font-family: var(--font-pixely);
+                    font-size: 20px;
+                }
+            }
+
+            &:has(a.more:hover) {
+                z-index: 20;
+                scale: 1.06;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: flex-end;
+
+                a {
+                    width: 120px;
+                    height: 46px;
+                    border-radius: 12px;
+                    border: 2px solid black;
+                    background-color: var(--orange);
+                    color: black;
+                    font-family: var(--font-button);
+                    z-index: 9;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:hover {
+                        box-shadow: var(--shadow);
+                        z-index: 20;
+                    }
+                }
+            }
+
+            &.informational {
+                background-color: var(--purple);
+
+                .stars {
+                    width: 60px;
+                    height: 60px;
+                    position: absolute;
+                    top: -15px;
+                    left: 10px;
+                }
+            }
+
+            &.restaurant {
+                background-color: var(--red);
+
+                .food {
+                    position: absolute;
+                    width: 70px;
+                    height: 70px;
+                    top: -15px;
+                    right: 10px;
+                }
+
+                .offer {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 52px;
+                    background: var(--orange);
+                    border-bottom-left-radius: 12px;
+                    border-bottom-right-radius: 12px;
+                    padding: 0 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .line {
+                        position: absolute;
+                        height: 52px;
+                        width: 52px;
+                        right: -60px;
+                        top: 0
+                    }
+
+                    .buttons {
+                        #strava-menu {
+                            width: 32px;
+                            height: 32px;
+                            border-radius: 8px;
+                            background-color: var(--green);
+
+                            ion-icon {
+                                color: black;
+                            }
+
+                            &:hover {
+                                box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.modify {
+                background-color: var(--green);
+
+                .title {
+                    display: flex;
+
+                    ion-icon {
+                        margin-top: 8px;
+                        font-size: 24px;
+                    }
+                }
+
+                .f1 {
+                    font-family: var(--font-random-1) !important;
+                    font-size: 16px !important;
+                }
+
+                .f2 {
+                    font-family: var(--font-random-2) !important;
+                    font-size: 16px !important;
+                }
+
+                .f3 {
+                    font-family: var(--font-random-3) !important;
+                    font-size: 16px !important;
+                }
+
+                .f4 {
+                    font-family: var(--font-random-4) !important;
+                    font-size: 16px !important;
+                }
+            }
+
+            &.complex {
+                background-color: var(--blue);
+
+                .buttons {
+                    button {}
+                }
+            }
+
+            &.mobile {
+                background-color: var(--pink);
+            }
+
+            &.other {
+                background-color: var(--orange);
+
+                .buttons a {
+                    background-color: var(--red);
+                }
+            }
+        }
+
+    }
+
+
+
+
+    #contact {}
 }

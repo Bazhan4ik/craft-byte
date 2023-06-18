@@ -1,0 +1,46 @@
+<div class="app">
+    <div class="container">
+
+        <div id="contact">
+            <div class="header">
+                <div class="logo">
+                    <img src="./../../assets/icon/logo.png" alt="">
+                </div>
+                <div class="name">
+                    <h1>CraftByte</h1>
+                </div>
+            </div>
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="top">
+                    <div class="name">
+                        <p class="label">Your name</p>
+                        <input formControlName="name" name="name" type="text">
+                    </div>
+                    <div class="email">
+                        <p class="label">Email address</p>
+                        <input formControlName="email" name="email" type="email">
+                    </div>
+                </div>
+
+                <div class="message">
+                    <p class="label">Explain what you want</p>
+                    <textarea (focus)="focus()" formControlName="message" name="explanation"></textarea>
+                </div>
+
+                <div class="buttons">
+                    <div class="text">
+                        <p class="label">It's that easy!</p>
+                    </div>
+                    <button type="submit">SEND</button>
+                </div>
+
+            </form>
+
+            <div class="info">
+                <p>We will contact you shortly with a demo website, more specifications, and price. You will have to pay
+                    when the website is fully ready, in your control, and you're satisfied.</p>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,20 +1,128 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="app">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <!-- <div class="overlay" *ngIf="darken"></div> -->
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+    <div class="container">
+
+
+
+
+        <div class="options">
+            <div class="option informational">
+                <img src="./../../assets/icon/stars.png" class="stars">
+
+                <div class="title">
+                    <h2>Informational Website?</h2>
+                </div>
+                <div class="subtitle">
+                    <p>Want to provide information about something?</p>
+                </div>
+                <div class="text">
+                    <p>Informational website is a simple, beautiful website that tells about what you or your company
+                        does.</p>
+                    <p>
+                        For example, if you want a website for your beauty salon you will be making an informational
+                        website.
+                    </p>
+                </div>
+                <div class="buttons">
+                    <a [routerLink]="['contact']" [queryParams]="{t: 'informational'}" class="more"
+                        id="informational">CONTACT
+                        US</a>
+                </div>
+            </div>
+            <div class="option restaurant">
+                <div class="title">
+                    <h2>Website for a Restaurant?</h2>
+                </div>
+                <div class="subtitle">
+                    <p>Want a website for your restaurant with a menu?</p>
+                </div>
+                <div class="text">
+                    <p>Attract new customers to your restaurant with a beautiful website</p>
+                </div>
+                <div class="buttons">
+                    <a [routerLink]="['contact']" [queryParams]="{t: 'restaurant'}" class="more" id="restaurant">CONTACT
+                        US</a>
+                </div>
+                <div class="offer">
+                    <div class="text">
+                        <p>Want to update your restaurant software?</p>
+                    </div>
+                    <div class="buttons">
+                        <button id="strava-menu"><ion-icon name="open-outline"></ion-icon></button>
+                    </div>
+                    <img src="./../../assets/icon/line.png" class="line">
+                </div>
+            </div>
+            <div class="option modify">
+                <div class="title">
+                    <h2>Modify Existing Website?</h2>
+                    <ion-icon name="pencil-sharp"></ion-icon>
+                </div>
+                <div class="subtitle">
+                    <p #modifyText>Want some changes to an existing website?</p>
+                </div>
+                <div class="text">
+                    <p #modifyText>Want to add new functions to your web-app?</p>
+                    <p #modifyText>Want make existing website prettier?</p>
+                    <p #modifyText>We will update your website!</p>
+                </div>
+                <div class="buttons">
+                    <a [routerLink]="['contact']" [queryParams]="{t: 'modify'}" class="more" (mouseover)="onHover()"
+                        (mouseleave)="onLeave()" id="modify">
+                        CONTACT US
+                    </a>
+                </div>
+            </div>
+            <div class="option complex">
+                <div class="title">
+                    <h2>Complex Web-app?</h2>
+                </div>
+                <div class="subtitle">
+                    <p>Want to build a complex web-app with many functions?</p>
+                </div>
+                <div class="text">
+                    <p>Need your web-app to do many things?</p>
+                    <p>Want to automate some things?</p>
+                    <p>We will work together with you to create the best web-app for you!</p>
+                </div>
+                <div class="buttons">
+                    <a [routerLink]="['contact']" [queryParams]="{t: 'complex'}" id="complex" class="more">
+                        CONTACT US
+                    </a>
+                </div>
+            </div>
+            <div class="option mobile">
+                <div class="title">
+                    <h2>Mobile App?</h2>
+                </div>
+                <div class="subtitle">
+                    <p>Want to have an app for mobile phones?</p>
+                </div>
+                <div class="text">
+                    <p>We will build a beautiful mobile app for you!</p>
+                </div>
+                <div class="buttons">
+                    <a [routerLink]="['contact']" [queryParams]="{t: 'mobile'}" id="mobile" class="more">
+                        CONTACT US
+                    </a>
+                </div>
+            </div>
+            <div class="option other">
+                <div class="title">
+                    <h2>Not sure?</h2>
+                </div>
+                <div class="subtitle">
+                    <p>If you're not sure what kind of website you want, just ask us!</p>
+                    <p>We'll get back shortly</p>
+                </div>
+                <div class="buttons">
+                    <a routerLink="/contact" class="more" id="contact-btn">
+                        CONTACT US
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
