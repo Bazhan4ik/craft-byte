@@ -5,15 +5,15 @@
     "homepage": "https://ionicframework.com/",
     "scripts": {
         "ng": "ng",
-        "start": "npm run serve:ssr",
-        "build": "npm run build:ssr && npm run serve:ssr",
+        "start": "ng serve",
+        "build-dev": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "lint": "ng lint",
-        "dev:ssr": "ng run app:serve-ssr",
-        "serve:ssr": "node dist/app/server/main.js",
-        "build:ssr": "ng build && ng run app:server",
-        "prerender": "ng run app:prerender"
+        "dev:ssr": "ng run test:serve-ssr",
+        "serve:ssr": "node dist/test/server/main.js",
+        "build:ssr": "ng build && ng run test:server",
+        "prerender": "ng run test:prerender",
+        "vercel-build": "npm run build:ssr"
     },
     "private": true,
     "dependencies": {
