@@ -6,7 +6,7 @@
     "scripts": {
         "ng": "ng",
         "start": "npm run serve:ssr",
-        "build": "npm run build:ssr",
+        "build": "npm run build:ssr && npm run serve:ssr",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "lint": "ng lint",

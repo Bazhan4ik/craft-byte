@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "public": true,
+    "name": "<PROJECT_NAME>",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/api"
+        }
+    ],
+    "functions": {
+        "api/index.js": {
+            "includeFiles": "dist/app/browser/**"
+        }
+    }
+}
