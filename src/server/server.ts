@@ -49,8 +49,13 @@ export function app(): express.Express {
 async function run(): Promise<void> {
     const port = process.env['PORT'] || 4200;
 
+    // Connect to MongoDB
+    try {
+        await client.connect();
+    } catch (error) {
+        console.error("ERROR CONNECTING TO MONGODB");
+    }
     // Start up the Node server
-    await client.connect();
     const server = app();
     server.listen(port, () => {
         console.log(`Node Express server listening on http://localhost:${port}`);
