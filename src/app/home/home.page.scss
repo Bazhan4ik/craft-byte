@@ -159,7 +159,8 @@
                         height: 52px;
                         width: 52px;
                         right: -60px;
-                        top: 0
+                        top: 0;
+                        animation: lineMoving 1s linear infinite;
                     }
 
                     .buttons {
@@ -218,7 +219,46 @@
                 background-color: var(--blue);
 
                 .buttons {
-                    button {}
+
+                    .complexity {
+                        // margin-right: 100px;
+                        position: relative;
+
+                        ion-icon {
+                            color: black;
+                            height: 24px;
+                            width: 24px;
+                            position: absolute;
+                            animation: rotation 2s infinite linear;
+                        }
+
+                        .s1 {
+                            top: -25px;
+                            left: 0px;
+                        }
+
+                        .s2 {
+                            top: -24px;
+                            left: -24px;
+                        }
+
+                        .s3 {
+                            top: 0px;
+                            left: -24px;
+                        }
+
+                        .s4 {
+                            top: 24px;
+                            left: -24px;
+                        }
+
+                        .s5 {
+                            top: 24px;
+                            left: -49px;
+                        }
+                    }
+
+
                 }
             }
 
@@ -262,5 +302,29 @@
                 padding-bottom: 60px;
             }
         }
+    }
+}
+
+@keyframes rotation {
+    0% {
+        rotate: 0;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+@keyframes lineMoving {
+    0% {
+        right: -60px;
+    }
+
+    50% {
+        right: -70px;
+    }
+
+    0% {
+        right: -60px;
     }
 }

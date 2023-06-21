@@ -23,6 +23,7 @@ router.post("/", async (req, res) => {
         return res.status(400).send({ message: "failed", reason: "invalid" });
     }
 
+    console.log("PROCCEDING TO SAVING THE MESSAGE");
 
     try {
         const result = await client.db("craftbyte").collection("messages").insertOne({
@@ -32,11 +33,13 @@ router.post("/", async (req, res) => {
             createdAt: Date.now(),
         });
 
+        console.log("MESSAGE SAVED");
+
         return res.send({ message: "ok" });
     } catch (e) {
+        console.error("SAVING MESSAGE FAILED");
         return res.status(500).send({ message: "failed", reason: "server" });
     }
-
 });
 
 
