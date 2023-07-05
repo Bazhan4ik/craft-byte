@@ -1,6 +1,7 @@
 import { Router } from "express";
 import axios from 'axios';
 import client from "../mongodb";
+import { isValidEmail, sendEmail } from "../utils/email";
 
 
 
@@ -19,7 +20,7 @@ router.post("/", async (req, res) => {
     if (!score || score < 0.6) {
         return res.status(403).send({ message: "failed", reason: "captcha" });
     }
-    if (!message || !name || !email) {
+    if (!message || !name || !email || !isValidEmail(email)) {
         return res.status(400).send({ message: "failed", reason: "invalid" });
     }
 
@@ -34,6 +35,13 @@ router.post("/", async (req, res) => {
         });
 
         console.log("MESSAGE SAVED");
+
+        const isSent = await sendEmail("bazhantt@gmail.com", "Someone wants a website!", "Check your mongodb!");
+
+        if (isSent == 1) {
+            console.log("EMAIL SENT TO bazhantt@gmail.com");
+        }
+
 
         return res.send({ message: "ok" });
     } catch (e) {
